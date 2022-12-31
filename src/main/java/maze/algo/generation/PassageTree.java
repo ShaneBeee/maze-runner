@@ -101,12 +101,12 @@ public class PassageTree {
     /**
      * The height of the maze in an imaginary edge form.
      */
-    private int height;
+    private final int height;
 
     /**
      * The width of the maze in an imaginary edge form.
      */
-    private int width;
+    private final int width;
 
     /**
      * Creates a new imaginary edge form
@@ -142,18 +142,18 @@ public class PassageTree {
         var edges = new ArrayList<Edge>();
         for (int column = 1; column < width; column++) {
             edges.add(new Edge(toIndex(0, column),
-                               toIndex(0, column - 1)));
+                    toIndex(0, column - 1)));
         }
         for (int row = 1; row < height; row++) {
             edges.add(new Edge(toIndex(row, 0),
-                               toIndex(row - 1, 0)));
+                    toIndex(row - 1, 0)));
         }
         for (int row = 1; row < height; row++) {
             for (int column = 1; column < width; column++) {
                 edges.add(new Edge(toIndex(row, column),
-                                   toIndex(row, column - 1)));
+                        toIndex(row, column - 1)));
                 edges.add(new Edge(toIndex(row, column),
-                                   toIndex(row - 1, column)));
+                        toIndex(row - 1, column)));
             }
         }
         return edges;
@@ -187,9 +187,9 @@ public class PassageTree {
     private List<Edge> buildRandomSpanningTree(List<Edge> edges) {
         var disjointSets = new DisjointSet(width * height);
         return edges
-            .stream()
-            .filter(edge -> connects(edge, disjointSets))
-            .collect(toList());
+                .stream()
+                .filter(edge -> connects(edge, disjointSets))
+                .collect(toList());
     }
 
     /**
@@ -213,12 +213,12 @@ public class PassageTree {
      */
     private List<Cell> createPassages(List<Edge> spanningTree) {
         return spanningTree
-            .stream()
-            .map(edge -> {
-                var first = fromIndex(edge.getFirstCell());
-                var second = fromIndex(edge.getSecondCell());
-                return getPassage(first, second);
-            }).collect(toList());
+                .stream()
+                .map(edge -> {
+                    var first = fromIndex(edge.getFirstCell());
+                    var second = fromIndex(edge.getSecondCell());
+                    return getPassage(first, second);
+                }).collect(toList());
     }
 
     /**
@@ -251,4 +251,5 @@ public class PassageTree {
         var column = first.getColumn() + second.getColumn() + 1;
         return new Cell(row, column, PASSAGE);
     }
+
 }

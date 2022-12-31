@@ -7,6 +7,7 @@ import java.util.Objects;
  *
  * @author Philipp Malkovsky
  */
+@SuppressWarnings("unused")
 public class Cell {
 
     /**
@@ -16,7 +17,7 @@ public class Cell {
     public enum Type {
         PASSAGE,
         WALL,
-        ESCAPE;
+        ESCAPE
     }
 
     /**
@@ -66,8 +67,8 @@ public class Cell {
         if (o == null || getClass() != o.getClass()) return false;
         var cell = (Cell) o;
         return row == cell.row &&
-            column == cell.column &&
-            type == cell.type;
+                column == cell.column &&
+                type == cell.type;
     }
 
     @Override
@@ -78,9 +79,10 @@ public class Cell {
     @Override
     public String toString() {
         return "Cell{" +
-            "row=" + row +
-            ", column=" + column +
-            ", type=" + type +
-            '}';
+                "row=" + row +
+                ", column=" + column +
+                ", type=" + type +
+                '}';
     }
+
 }

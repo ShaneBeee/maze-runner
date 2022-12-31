@@ -44,4 +44,5 @@ class Edge {
     int getSecondCell() {
         return secondCell;
     }
+
 }

@@ -32,38 +32,38 @@ public class Fugitive {
     /**
      * The height of the maze in nodes.
      */
-    private int height;
+    private final int height;
 
     /**
      * The width of the maze in node.
      */
-    private int width;
+    private final int width;
 
     /**
      * Two-dimensional array of nodes representing maze.
      */
-    private Node[][] grid;
+    private final Node[][] grid;
 
     /**
      * The start point to find a path from.
      */
-    private Node start;
+    private final Node start;
 
     /**
      * The end point to find a path to.
      */
-    private Node end;
+    private final Node end;
 
     /**
      * A priority queue to perform the selection of minimum
      * estimated cost node on every step of the algorithm.
      */
-    private PriorityQueue<Node> open = new PriorityQueue<>(comparingInt(Node::getFinalCost));
+    private final PriorityQueue<Node> open = new PriorityQueue<>(comparingInt(Node::getFinalCost));
 
     /**
      * Already processed nodes.
      */
-    private Set<Node> closed = new HashSet<>();
+    private final Set<Node> closed = new HashSet<>();
 
     /**
      * Constructs a new object with given grid of cells
@@ -199,7 +199,8 @@ public class Fugitive {
      */
     private boolean inBounds(int row, int column) {
         return row >= 0 && row < height
-            && column >= 0 && column < width;
+                && column >= 0 && column < width;
     }
+
 }
 

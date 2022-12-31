@@ -106,7 +106,7 @@ class Node {
      */
     void calcHeuristicTo(Node node) {
         this.h = Math.abs(node.row - this.row)
-            + Math.abs(node.column - this.column);
+                + Math.abs(node.column - this.column);
     }
 
     /**
@@ -138,12 +138,13 @@ class Node {
         if (o == null || getClass() != o.getClass()) return false;
         var node = (Node) o;
         return row == node.row &&
-            column == node.column &&
-            isWall == node.isWall;
+                column == node.column &&
+                isWall == node.isWall;
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(row, column, isWall);
     }
+
 }

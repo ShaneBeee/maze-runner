@@ -7,6 +7,7 @@ import static java.util.stream.IntStream.range;
  * @see <a href="https://en.wikipedia.org/wiki/Disjoint-set_data_structure">
  * Disjoint-set data structure</a> implementation.
  */
+@SuppressWarnings("unused")
 public class DisjointSet {
 
     /**
@@ -17,7 +18,7 @@ public class DisjointSet {
      * @see <a href="https://en.wikipedia.org/wiki/Disjoint-set_data_structure#Representation">
      * Disjoint-set representation</a>
      */
-    private int[] parent;
+    private final int[] parent;
 
     /**
      * Heights of the trees corresponding to the subsets.
@@ -26,7 +27,7 @@ public class DisjointSet {
      * @see <a href="https://en.wikipedia.org/wiki/Disjoint-set_data_structure#by_rank">
      * Union by rank</a>
      */
-    private int[] rank;
+    private final int[] rank;
 
     /**
      * The number of disjoint subsets.
@@ -104,4 +105,5 @@ public class DisjointSet {
         size--;
         return true;
     }
+
 }

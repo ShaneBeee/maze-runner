@@ -18,6 +18,7 @@ import static maze.model.Cell.Type.WALL;
  *
  * @author Philipp Malkovsky
  */
+@SuppressWarnings("unused")
 public class Maze {
 
     /**
@@ -50,8 +51,8 @@ public class Maze {
     public Maze(int height, int width) {
         if (height < 3 || width < 3) {
             throw new IllegalArgumentException(
-                "Both the height and the width " +
-                    "of the maze must be at least 3");
+                    "Both the height and the width " +
+                            "of the maze must be at least 3");
         }
         this.height = height;
         this.width = width;
@@ -235,8 +236,8 @@ public class Maze {
      */
     private void generatePassages() {
         new PassageTree(height, width)
-            .generate()
-            .forEach(putCell());
+                .generate()
+                .forEach(putCell());
     }
 
     /**
@@ -271,8 +272,8 @@ public class Maze {
     public String findEscape() {
         if (!isSolved) {
             new Fugitive(grid, getEntrance(), getExit())
-                .findEscape()
-                .forEach(putCell());
+                    .findEscape()
+                    .forEach(putCell());
             isSolved = true;
         }
         return toString(true);
@@ -425,14 +426,14 @@ public class Maze {
                 var row = whole[i + 1].split(" ");
                 for (int j = 0; j < width; j++)
                     grid[i][j] = new Cell(
-                        i, j, intToType(parseInt(row[j]))
+                            i, j, intToType(parseInt(row[j]))
                     );
             }
             return new Maze(height, width, grid);
         } catch (Exception e) {
             throw new IllegalArgumentException(
-                "Cannot load the maze. " +
-                    "It has an invalid format"
+                    "Cannot load the maze. " +
+                            "It has an invalid format"
             );
         }
     }
@@ -500,11 +501,11 @@ public class Maze {
     public String export() {
         var sb = new StringBuilder();
         sb.append(height).append(' ')
-          .append(width).append('\n');
+                .append(width).append('\n');
         for (var row : grid) {
             for (var cell : row)
                 sb.append(typeToInt(cell))
-                  .append(' ');
+                        .append(' ');
             sb.append('\n');
         }
         return sb.toString();
@@ -520,4 +521,5 @@ public class Maze {
     private int typeToInt(Cell cell) {
         return cell.isWall() ? 1 : 0;
     }
+
 }
