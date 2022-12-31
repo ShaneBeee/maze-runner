@@ -3,6 +3,9 @@ package maze.model;
 import maze.algo.generation.PassageTree;
 import maze.algo.solving.Fugitive;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Consumer;
 
 import static java.lang.Integer.parseInt;

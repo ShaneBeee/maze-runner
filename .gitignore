@@ -1,0 +1,15 @@
+/dependency-reduced-pom.xml
+/.idea/
+/maze-runner.iml
+
+# Compiled class file
+*.class
+
+/.gradle/
+/.settings/
+.project
+.classpath
+/build/
+/bin/
+/target/
+src/.DS_Store
