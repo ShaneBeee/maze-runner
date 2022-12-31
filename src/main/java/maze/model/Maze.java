@@ -279,6 +279,16 @@ public class Maze {
     }
 
     /**
+     * Finds a path of cells to form the escape route
+     *
+     * @return List of cells to form the escape route
+     */
+    public List<Cell> findEscapeList() {
+        Fugitive fugitive = new Fugitive(grid, getEntrance(), getExit());
+        return fugitive.findEscape();
+    }
+
+    /**
      * Return the entrance cell.
      *
      * @return the entrance cell
