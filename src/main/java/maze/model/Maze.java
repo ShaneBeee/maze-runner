@@ -60,6 +60,19 @@ public class Maze {
     }
 
     /**
+     * Get available {@link Cell cells}
+     *
+     * @return List of all cells
+     */
+    public List<Cell> getCells() {
+        List<Cell> cells = new ArrayList<>();
+        for (Cell[] cell : grid) {
+            cells.addAll(Arrays.asList(cell));
+        }
+        return cells;
+    }
+
+    /**
      * Generates a new square maze of a given size.
      *
      * @param size size of a maze
