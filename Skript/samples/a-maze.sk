@@ -1,0 +1,52 @@
+# Custom Expressions/Condition for Mazes
+# Requires Skript-Reflect
+
+import:
+	maze.model.Maze
+	maze.model.Cell
+	maze.model.Cell$Type
+
+# create a new maze object
+expression [new] maze with size %number%(,| and )%number%:
+	get:
+		set {_m} to new Maze(expr-1, expr-2)
+		return {_m}
+
+# get a list of cells of a maze
+plural expression cells of %object%:
+	get:
+		set {_o} to expr-1
+		if {_o} is instance of Maze:
+			return ...{_o}.getCells()
+
+# get a list of cells that form the escape route of a maze
+plural expression escape(s| list| route) of %object%:
+	get:
+		set {_o} to expr-1
+		if {_o} is instance of Maze:
+			return ...{_o}.findEscapeList()
+
+# get the row/column of a cell (essentially the x/z value of a cell)
+expression (:row|column) of %object%:
+	get:
+		set {_o} to expr-1
+		if {_o} is instance of Cell:
+			if parse tags contain "row":
+				return {_o}.getRow()
+			else:
+				return {_o}.getColumn()
+
+# check if a cell is a wall, passage or escape cell
+condition cell type of %object% (is|=) (:wall|:passage|:escape):
+	check:
+		set {_c} to expr-1
+		if {_c} is instance of Cell:
+			if parse tags contains "wall":
+				if {_c}.isWall() = true:
+					continue
+			else if parse tags contains "passage":
+				if {_c}.isPassage() = true:
+					continue
+			else if parse tags contains "escape":
+				if {_c}.isEscape() = true:
+					continue
