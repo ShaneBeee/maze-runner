@@ -312,7 +312,7 @@ public class Maze {
      *
      * @return the entrance cell
      */
-    private Cell getEntrance() {
+    public Cell getEntrance() {
         return grid[0][1];
     }
 
@@ -321,7 +321,7 @@ public class Maze {
      *
      * @return the exit cell
      */
-    private Cell getExit() {
+    public Cell getExit() {
         return grid[height - 1][getExitColumn()];
     }
 
