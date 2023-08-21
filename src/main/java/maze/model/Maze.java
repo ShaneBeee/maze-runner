@@ -74,6 +74,24 @@ public class Maze {
     }
 
     /**
+     * Get height of maze
+     *
+     * @return Height of maz
+     */
+    public int getHeight() {
+        return height;
+    }
+
+    /**
+     * Get width of maze
+     *
+     * @return Width of maze
+     */
+    public int getWidth() {
+        return width;
+    }
+
+    /**
      * Generates a new square maze of a given size.
      *
      * @param size size of a maze
