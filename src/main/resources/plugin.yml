@@ -1,0 +1,5 @@
+main: maze.skript.SkMaze
+name: SkMaze
+version: '${project.version}'
+depend:
+  - Skript

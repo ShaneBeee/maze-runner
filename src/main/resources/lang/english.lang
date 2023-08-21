@@ -1,0 +1,6 @@
+version: ${project.version}
+
+types:
+    maze: maze¦s
+    cell: cell¦s
+    celltype: cell[ ]type¦s
