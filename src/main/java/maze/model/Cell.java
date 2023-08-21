@@ -49,6 +49,10 @@ public class Cell {
         return column;
     }
 
+    public Type getType() {
+        return type;
+    }
+
     public boolean isPassage() {
         return type == Type.PASSAGE;
     }
