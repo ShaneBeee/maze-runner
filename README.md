@@ -12,3 +12,4 @@ This fork is reworked to include a Skript addon named SkMaze, which includes sev
 ## SkMaze Docs:
 [![SkriptHubViewTheDocs](http://skripthub.net/static/addon/ViewTheDocsButton.png)](http://skripthub.net/docs/?addon=SkMaze)
 
+See [**Wiki**](https://github.com/ShaneBeee/maze-runner/wiki) for more examples
