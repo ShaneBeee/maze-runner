@@ -8,3 +8,7 @@ It is written in pure Java and has a detailed javadoc.
 
 # SkMaze
 This fork is reworked to include a Skript addon named SkMaze, which includes several syntaxes to use the maze algorithm in Skript.
+
+## SkMaze Docs:
+[![SkriptHubViewTheDocs](http://skripthub.net/static/addon/ViewTheDocsButton.png)](http://skripthub.net/docs/?addon=SkMaze)
+
